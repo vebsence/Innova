@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактирајте Не</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            gap: 19px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid rgb(207, 207, 207);
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .contact-container p {
+            text-align: justify;
+            line-height: 1.6;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .inputfield {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .inputfield input,
+        .inputfield textarea {
+            width: calc(100% - 44px);
+            padding: 10px 20px;
+            border: 1px solid rgb(207, 207, 207);
+            outline: none;
+            font-size: 1.25em;
+            border-radius: 6px;
+            line-height: 35px;
+        }
+
+        .inputfield textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .inputfield span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            pointer-events: none;
+            font-size: 1.25em;
+            transition: 0.35s;
+            color: rgb(170, 170, 170);
+        }
+
+        .inputfield input:valid ~ span,
+        .inputfield input:focus ~ span,
+        .inputfield textarea:valid ~ span,
+        .inputfield textarea:focus ~ span {
+            top: 0;
+            color: rgb(76, 194, 95);
+            transform: translateY(-10px);
+            font-size: 1.19em;
+            padding: 0 10px;
+            background: rgb(255, 255, 255);
+        }
+
+        .inputfield input:focus,
+        .inputfield textarea:focus {
+            border-color: rgb(76, 194, 95);
+        }
+
+        #send {
+            background-color: rgb(46, 224, 46);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            width: calc(100% - 40px);
+            height: 50px;
+            font-size: 1.25em;
+            transition: 0.2s;
+            margin-bottom: 20px;
+        }
+
+        #send:hover {
+            cursor: pointer;
+            background-color: rgb(46, 200, 46);
+        }
+
+        a {
+            color: green;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <h1>Контактирајте Не</h1>
+    <p>
+        Ако имате било какви прашања или загрижености, ве молиме пополнете ја формата подолу и ќе ве контактираме во најскоро време.
+    </p>
+    <div class="inputfield">
+        <input type="text" required>
+        <span>Вашето Име</span>
+    </div>
+    <div class="inputfield">
+        <input type="email" required>
+        <span>Вашата Е-пошта</span>
+    </div>
+    <div class="inputfield">
+        <textarea required></textarea>
+        <span>Вашата Порака</span>
+    </div>
+    <button id="send">Испрати</button>
+</div>
+
+</body>
+</html>

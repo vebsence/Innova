@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innova</title>
-    <link rel="stylesheet" href="begin.css">
+    <link rel="stylesheet" href="CSS/begin.css">
 </head>
 <body>
     <header>
@@ -23,54 +23,85 @@
     
     <main>
         <div class="content-wrapper">
-            <div class="left-side">
-                <img src="images/logo.png" alt="Innova Logo" class="company-logo">
+	    <div class="left-side">
+                <p id="animated-message" class="message">Добредојдовте во Innova!</p>
             </div>
             
             <div class="product-box">
-                <div class="product" data-color="blue">
-                    <h2>Монитори</h2>
+                <div class="product-row">
+                    <div class="product" data-color="blue">
+                        <h2>Процесори</h2>
+                    </div>
+                    <div class="product" data-color="yellow">
+                        <h2>Графички</h2>
+                    </div>
                 </div>
-                <div class="product" data-color="yellow">
-                    <h2>Компоненти</h2>
+                <div class="product-row">
+                    <div class="product" data-color="blue">
+                        <h2>Матични</h2>
+                    </div>
+                    <div class="product" data-color="yellow">
+                        <h2>Напојувања</h2>
+                    </div>
                 </div>
-                <div class="product" data-color="yellow">
-                    <h2>Аудио</h2>
+                <div class="product-row">
+                    <div class="product" data-color="blue">
+                        <h2>Монитори</h2>
+                    </div>
+                    <div class="product" data-color="yellow">
+                        <h2>Периферии</h2>
+                    </div>
                 </div>
-                <div class="product" data-color="yellow">
-                    <h2>Кабли</h2>
-                </div>
-                <div class="product" data-color="yellow">
-                    <h2>Додатоци</h2>
-                </div>
-                <div class="product" data-color="yellow">
-                    <h2>Дата</h2>
-                </div>
-                <div class="product" data-color="yellow">
-                    <h2>Принтери</h2>
-                </div>
-                <div class="product" data-color="yellow">
-                    <h2>Нетворк</h2>
+                <div class="product-row">
+                    <div class="product" data-color="blue">
+                        <h2>Куќишта</h2>
+                    </div>
+                    <div class="product" data-color="yellow">
+                        <h2>Дата</h2>
+                    </div>
                 </div>
             </div>
-            
-            <div class="right-side">
-                <p id="animated-message" class="message">Welcome to Innova!</p>
+	    <div class="right-side">
+                <img src="./LogoInnova.png" alt="Innova Logo" class="company-logo">
             </div>
+
         </div>
     </main>
     
     <footer>
         <nav>
             <ul>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="./Contact.html">Контакт</a></li>
+                <li><a href="./AboutUs.html">За нас</a></li>
+                <li><a href="./Privacy.html">Политика на приватност</a></li>
             </ul>
         </nav>
         <p>&copy; 2024 Innova. All rights reserved.</p>
     </footer>
+
+    <script>
+        const messages = [
+            "Добредојдовте во Innova!",
+            "Најдобри понуди за компјутерски хардвер!",
+            "Квалитетна опрема од врвни брендови!",
+            "Брза и сигурна достава!"
+        ];
+
+        let messageIndex = 0;
+        const messageElement = document.getElementById('animated-message');
+
+        function showNextMessage() {
+            messageElement.classList.add('hidden'); 
+            setTimeout(() => {
+                messageIndex = (messageIndex + 1) % messages.length;
+                messageElement.textContent = messages[messageIndex];
+                messageElement.classList.remove('hidden'); 
+            }, 500); 
+        }
+
+        setInterval(showNextMessage, 3000);
+    </script>
+
     
-    <script src="begin.css"></script>
 </body>
 </html>
